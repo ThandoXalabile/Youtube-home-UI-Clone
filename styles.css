@@ -2,6 +2,7 @@
 :root {
     --color-grey: #e5e5e5;
     --color-grey-dark: #e5e5e5d2;
+    --color-bg: #f9f9f9;
 }
 
 * {
@@ -14,11 +15,34 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+h1 {
+    font-size: 20px;
+    margin-top: 10px;
+    color: rgb(3, 3, 3);
+}
+
+h4 {
+    font-size: 14px;
+    margin-left: 15px;
+    color: rgb(96, 96, 96);
+    margin-bottom: 10px;
+}
+
+.material-icons {
+    color: rgb(96, 96, 96)
+}
+
+hr {
+    height: 1px;
+    background-color: var(--color-grey)
+}
+
 .menuBar {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     height: 70px;
+    padding: 15px;
 }
 
 .menuBar .logo {
@@ -38,6 +62,9 @@ body {
 .menuBar .search form {
     border: 1px solid #ddd;
     height: 35px;
+    margin: 0;
+    padding: 0;
+    display: flex;
 }
 
 .menuBar .search input {
@@ -63,19 +90,30 @@ body {
     overflow: hidden;
 }
 
-.mainBody .categories {
-    width: 230px;
-    background-color: white;
-    overflow-y: scroll;
-}
-
 .mainBody .categoriesSection {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    margin-bottom: 15px;
+    margin-top: 15px;
 }
 
 .mainBody .categories .categoriesSection .category {
     padding: 12px 25px;
+    display: flex;
+    align-items: center;
+}
+
+.mainBody .categories .categoriesSection .category .active {
+    color: red;
+}
+
+.mainBody .categories .categoriesSection .category span {
+    margin-left: 15px;
+}
+
+.active-span {
+    background: var(--color-grey-dark);
 }
 
 .mainBody .categories .categoriesSection .category:hover {
@@ -83,21 +121,32 @@ body {
     cursor: pointer;
 }
 
+.categories {
+    height: 100%;
+    width: 230px;
+    background-color: white;
+    overflow-y: scroll;
+}
+
 .videos {
     background: var(--color-grey);
     width: 100%;
     height: 100%;
+    padding: 15px 25px;
+    border-top: 1px solid;
+    overflow-y: scroll;
 }
 
 .videos .videosGrid {
     display: flex;
     justify-content: space-around;
-    margin: 25px 20px;
+    flex-wrap: wrap;
 }
 
 .videos .videosGrid .video {
     width: calc(25% - 10px);
-    margin-right: 15px;
+    margin-right: 10px;
+    margin-bottom: 30px;
 }
 
 .videos .videosGrid .thumbnail {
@@ -116,4 +165,26 @@ body {
     border-radius: 50%;
     height: 30px;
     width: 30px;
+    margin-right: 10px;
+}
+
+.details {
+    display: flex;
+    margin-top: 10px;
+}
+
+.details .title {
+    display: flex;
+    flex-direction: column;
+}
+
+.details .title h3 {
+    color: rgb(3, 3, 3);
+    font-size: 14px;
+}
+
+.details .title a,
+span {
+    text-decoration: none;
+    font-size: 14px;
 }
